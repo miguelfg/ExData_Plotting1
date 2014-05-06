@@ -4,7 +4,7 @@ mySql <- "SELECT * from file WHERE Date = '1/2/2007' OR Date = '2/2/2007'"
 myFile <- "household_power_consumption.txt"
 myData <- read.csv2.sql(myFile,mySql)
 
-# subset the data
+# parse dates
 myData$dt <- strptime(paste(myData$Date, myData$Time), format="%d/%m/%Y %H:%M:%S")
   
 # plot the data
